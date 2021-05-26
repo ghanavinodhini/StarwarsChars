@@ -1,10 +1,11 @@
 import React from "react";
-import TableHeader from "./TableHeader";
+import {Link} from "react-router-dom";
+
 
 function Home() {
     return (
             <div>
-                Home
+               <Link> Home </Link>
             </div>
     )
 }

@@ -2,16 +2,17 @@ import logo from './logo.svg';
 import './App.css';
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router,Switch,Route} from "react-router-dom";
-import NavTop from './components/NavTop';
 import Home from './components/Home';
 import Table from "./components/Table";
 import TableDataRow from "./components/TableDataRow";
+
 
 
 function App() {
 
     const [people,setPeople] = useState([]);
     const [isFetching, setIsFetching] = useState(false);
+    const [searchCharacter, setSearchCharacter] = useState("");
     
     useEffect(() => {
         async function fetchPeople(){
@@ -20,25 +21,31 @@ function App() {
 
           setPeople(data.results);
         }
-
         fetchPeople();
-    },[]);
+  },[]);
 
     console.log('data', people);
 
+    function Search(rows){
+        return rows.filter(person => person.name.toLowerCase().indexOf(searchCharacter) > -1)
+    
+    }
     
   return (
     <div className="App">
       <header className="App-header">
-         <NavTop />
+        Star Wars API
       </header>
       <Router>
         <Switch>
           <Route path='/'> <Home /> </Route>
         </Switch>
       </Router>
-      
-      <Table rows={people.map(person => <TableDataRow character={person} key={person.name} />)} />
+      <div>
+          <input type="text" value={searchCharacter} onChange={(e)=>
+          setSearchCharacter(e.target.value)} />
+      </div>
+      <Table rows={Search(people)} />
     </div>
   );
 }
