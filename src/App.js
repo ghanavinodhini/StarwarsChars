@@ -5,6 +5,7 @@ import { BrowserRouter as Router,Switch,Route} from "react-router-dom";
 import Home from './components/Home';
 import Table from "./components/Table";
 import TableDataRow from "./components/TableDataRow";
+import {Link} from "react-router-dom";
 
 
 
@@ -13,6 +14,7 @@ function App() {
     const [people,setPeople] = useState([]);
     const [isFetching, setIsFetching] = useState(false);
     const [searchCharacter, setSearchCharacter] = useState("");
+    
     
     useEffect(() => {
         async function fetchPeople(){
@@ -30,6 +32,7 @@ function App() {
         return rows.filter(person => person.name.toLowerCase().indexOf(searchCharacter) > -1)
     
     }
+    
     
   return (
     <div className="App">
