@@ -1,0 +1,14 @@
+
+.modal-dialog {
+    display: inline-flexbox;
+    vertical-align: middle;
+    background-color: antiquewhite;
+    height: auto;
+    width: 50%;
+    text-align: center;
+}
+
+.m-Header{
+    background-color: aqua;
+}
+  

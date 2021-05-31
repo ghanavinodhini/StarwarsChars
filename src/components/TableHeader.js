@@ -5,7 +5,6 @@ function TableHeader() {
         <thead>
             <tr className="table-header" style={{ color: "black" }}>
                 <th>Name</th>
-                <th>Birthdate</th>
             </tr>
         </thead>
     );
