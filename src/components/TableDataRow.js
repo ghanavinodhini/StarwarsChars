@@ -6,9 +6,9 @@ import '../css/modalCSS.css';;
 function TableDataRow({ character }) {
   const [modalIsOpen,setmodalIsOpen] = useState(false)
     return (
-        <tr className="charRowDetails">
-            <td style = {{cursor:'pointer'}} onClick={() => setmodalIsOpen(true)
-              }><u>{character.name}</u></td>
+        <tr className="charRowDetails" style={{ color: `var(--text-color)` }}>
+            <td style = {{cursor:'pointer'}} onClick={() => setmodalIsOpen(true)}>
+                <u>{character.name}</u></td>
 
             <Modal className="modal-dialog" centered isOpen={modalIsOpen} onRequestClose={() => setmodalIsOpen(false)}>
                 <div className="modal-content">
@@ -30,9 +30,6 @@ function TableDataRow({ character }) {
         </tr>
     );
       };
-
-      
-        
 
 
 export default TableDataRow;
