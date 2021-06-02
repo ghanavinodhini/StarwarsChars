@@ -20,7 +20,6 @@ body{
 
 .searchBox{
   display:flex;
-  
   float:right;
 }
 .searchInput{
