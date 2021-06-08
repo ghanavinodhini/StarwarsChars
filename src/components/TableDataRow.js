@@ -1,7 +1,8 @@
 import React,{useState} from "react";
 import {Link} from "react-router-dom";
 import Modal from 'react-modal';
-import '../css/modalCSS.css';;
+import '../css/modalCSS.css';
+
 
 function TableDataRow({ character }) {
   const [modalIsOpen,setmodalIsOpen] = useState(false)
