@@ -6,6 +6,10 @@
     width: 300px;
     height:30px;
   }
+
+  .searchBox{
+      margin-top: 20px;
+  }
 .nextBtn,
 .prevBtn{
     position: relative;
@@ -39,5 +43,11 @@
       --scale: 1;
   }
   
+  @media only screen and (max-width: 411px){
+      .prevBtn{
+          margin-top: 20px;
+          position:relative;
+      }
+  }
   
   

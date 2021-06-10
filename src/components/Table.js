@@ -3,6 +3,8 @@ import TableHeader from "./TableHeader";
 import TableDataRow from "./TableDataRow";
 import ReactPaginate from 'react-paginate';
 import FetchPeople from "./FetchPeople";
+import '../css/tableCSS.css';
+
 
  function Table({ rows, nextPage, prevPage }) {
     
@@ -13,8 +15,8 @@ import FetchPeople from "./FetchPeople";
         
     return (
         <div>
-            <table cellPadding={0} cellSpacing={0}
-                    style={{ width: "100%", padding: 10, marginTop: 50, marginLeft:"auto", marginRight:"auto", borderCollapse:"separate", borderSpacing: 15, textAlign: "center"}}>
+            <table className="displayTable" cellPadding={0} cellSpacing={0}>
+                     
                 <TableHeader />
                 <tbody>
                     {rows.map(person => <TableDataRow character={person} key={person.name} />)}

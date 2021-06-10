@@ -87,12 +87,12 @@ function FetchPeople() {
 
     if (nextPg !== null){
         console.log("Inside if condition nextPg value:"+nextPg);
-        nextButton = <button className="nextBtn" onClick={ handleNextClick } data-tooltip = "Next Page" style={ {backgroundColor:"white", width:"50px", align:"center",cursor:"pointer",marginLeft:"200px"}}> <FcNext /> </button>
+        nextButton = <button className="nextBtn" onClick={ handleNextClick } data-tooltip = "Next Page" style={ {backgroundColor:"white", width:"50px", height:"30px",align:"center",cursor:"pointer",marginLeft:"200px"}}> <FcNext /> </button>
     }
 
     if (previousPg !== null){
         console.log("Inside if condition previousPg value:"+previousPg);
-        previousButton = <button className="prevBtn" onClick={ handlePreviousClick } data-tooltip = "Previous Page" style={ {backgroundColor:"white", width:"50px", align:"center",cursor:"pointer",marginRight:"200px"}}> <FcPrevious /> </button>
+        previousButton = <button className="prevBtn" onClick={ handlePreviousClick } data-tooltip = "Previous Page" style={ {backgroundColor:"white", width:"50px",height:"30px", align:"center",cursor:"pointer",marginRight:"200px"}}> <FcPrevious /> </button>
     }
 
     return (
