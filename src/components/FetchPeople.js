@@ -13,8 +13,7 @@ function FetchPeople() {
     const [nextPg, setNextPg]= useState("");
     const [previousPg, setPreviousPg] = useState("");
     const [searchCharacter, setSearchCharacter] = useState("");
-    //const [searchData,setSearchData] = useState([]);
-
+    
     let nextButton;
     let previousButton;
 
@@ -24,30 +23,19 @@ function FetchPeople() {
             let data = await response.json();
             console.log(" Data fetched in FetchDataApi:" + data.results);
             setPeople(data.results);
-            //setSearchData(data.results);
             setNextPg(data.next);
             setPreviousPg(data.previous);
-            //searchTable();
         }
         fetchDataApi();
-    }, [])
+    }, []);
+ 
 
     function Search(rows)
     {
         return rows.filter(person => person.name.toLowerCase().indexOf(searchCharacter) > -1)
     }
 
-   /* function searchTable()
-    {
-        let newData = [...searchData];
-        newData.push(searchData);
-        setSearchData(newData);
-        console.log("New Search Data value length:"+newData.length);
-        console.log(newData.map(e=>{
-            console.log("New Search Data values:"+e.name);
-        }))
-    }*/
-
+     
     const handleNextClick = () => {
         console.log("NextPg value:"+nextPg);
         if(nextPg!== ""){
@@ -57,10 +45,8 @@ function FetchPeople() {
                     let data = await response.json();
                     console.log("Next data fetched in currentTableData:"+data.results);
                     setPeople(data.results);
-                    //setSearchData(data.results);
                     setNextPg(data.next);
-                    setPreviousPg(data.previous);
-                    //searchTable();
+                    setPreviousPg(data.previous); 
                 }
                 currentTableData();
                 
@@ -76,10 +62,8 @@ function FetchPeople() {
                     let data = await response.json();
                     console.log("Next data fetched in currentTableData:"+data.results);
                     setPeople(data.results);
-                    //setSearchData(data.results);
                     setNextPg(data.next);
                     setPreviousPg(data.previous);
-                    //searchTable();
                 }
                 currentTableData(); 
         }
@@ -98,13 +82,12 @@ function FetchPeople() {
     return (
         <div className="table-data-container">
             <div className="searchBox">
-                    <input type="text" placeholder="Search starwars character in this page" value={searchCharacter} onChange={(e)=>
-                    setSearchCharacter(e.target.value)} />
+
+                     <input type="text" placeholder="Search starwars character in this page" value={searchCharacter} onChange={(e)=>
+                    setSearchCharacter(e.target.value)} /> 
                     {/* <FaSearch style={{display:"inline-flex",height:"20px",margin:"auto",size:"18px",paddingRight:"20px"}}/> */}
             </div>
-                
-                 <Table rows={Search(people)} nextPage={nextPg} prevPage={previousPg}/>  
-                
+                  <Table rows={Search(people)} nextPage={nextPg} prevPage={previousPg}/>  
                     {previousButton} {nextButton} 
         </div>
     )        

@@ -14,6 +14,7 @@
 .prevBtn{
     position: relative;
 }
+
   .nextBtn::after,
   .nextBtn::before,
   .prevBtn::after,
@@ -43,11 +44,5 @@
       --scale: 1;
   }
   
-  @media only screen and (max-width: 411px){
-      .prevBtn{
-          margin-top: 20px;
-          position:relative;
-      }
-  }
   
   

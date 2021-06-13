@@ -16,10 +16,9 @@ import '../css/tableCSS.css';
     return (
         <div>
             <table className="displayTable" cellPadding={0} cellSpacing={0}>
-                     
                 <TableHeader />
                 <tbody>
-                    {rows.map(person => <TableDataRow character={person} key={person.name} />)}
+                     {rows.map(person => <TableDataRow character={person} key={person.name} />)} 
                 </tbody>
             </table>
         </div>

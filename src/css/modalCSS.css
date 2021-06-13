@@ -4,20 +4,25 @@
     background-color: antiquewhite;
     border: 2px solid gray;
     border-radius: 5px;
-    height: auto;
-    width: auto;
+    height:fit-content;
+    width: fit-content;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%); 
     text-align: center;  
+}
+
+.modal-content{
+    align-content: center;
 }
 
 .m-Header{
     background-color: aqua;
-    display: flex;
+    display: block;
     text-align: center;
     padding:0px;
+    width:fit-content
 }
 
 .closeBtn{
