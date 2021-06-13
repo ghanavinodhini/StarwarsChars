@@ -20,7 +20,7 @@ function FetchPeople() {
     //Get api data
     useEffect(() => {
         async function fetchDataApi(){
-            let response = await fetch('http://swapi.dev/api/people/?format=json');
+            let response = await fetch('https://swapi.dev/api/people/?format=json');
             let data = await response.json();
             console.log(" Data fetched in FetchDataApi:" + data.results);
             setPeople(data.results);
