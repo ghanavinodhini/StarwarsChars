@@ -13,41 +13,30 @@ function FetchPeople() {
     const [nextPg, setNextPg]= useState("");
     const [previousPg, setPreviousPg] = useState("");
     const [searchCharacter, setSearchCharacter] = useState("");
-    //const [searchData,setSearchData] = useState([]);
 
     let nextButton;
     let previousButton;
 
+    //Get api data
     useEffect(() => {
         async function fetchDataApi(){
             let response = await fetch('http://swapi.dev/api/people/?format=json');
             let data = await response.json();
             console.log(" Data fetched in FetchDataApi:" + data.results);
             setPeople(data.results);
-            //setSearchData(data.results);
             setNextPg(data.next);
             setPreviousPg(data.previous);
-            //searchTable();
         }
         fetchDataApi();
     }, [])
 
+    //search starwars character in a page
     function Search(rows)
     {
         return rows.filter(person => person.name.toLowerCase().indexOf(searchCharacter) > -1)
     }
 
-   /* function searchTable()
-    {
-        let newData = [...searchData];
-        newData.push(searchData);
-        setSearchData(newData);
-        console.log("New Search Data value length:"+newData.length);
-        console.log(newData.map(e=>{
-            console.log("New Search Data values:"+e.name);
-        }))
-    }*/
-
+  //Get api data for next page
     const handleNextClick = () => {
         console.log("NextPg value:"+nextPg);
         if(nextPg!== ""){
@@ -57,16 +46,15 @@ function FetchPeople() {
                     let data = await response.json();
                     console.log("Next data fetched in currentTableData:"+data.results);
                     setPeople(data.results);
-                    //setSearchData(data.results);
                     setNextPg(data.next);
                     setPreviousPg(data.previous);
-                    //searchTable();
                 }
                 currentTableData();
                 
         }
     }
 
+    //Get api data for previous page
     const handlePreviousClick = () => {
         console.log("PreviousPg value:"+previousPg);
         if(previousPg!== ""){
@@ -76,10 +64,8 @@ function FetchPeople() {
                     let data = await response.json();
                     console.log("Next data fetched in currentTableData:"+data.results);
                     setPeople(data.results);
-                    //setSearchData(data.results);
                     setNextPg(data.next);
                     setPreviousPg(data.previous);
-                    //searchTable();
                 }
                 currentTableData(); 
         }
@@ -100,7 +86,6 @@ function FetchPeople() {
             <div className="searchBox">
                     <input type="text" placeholder="Search starwars character in this page" value={searchCharacter} onChange={(e)=>
                     setSearchCharacter(e.target.value)} />
-                    {/* <FaSearch style={{display:"inline-flex",height:"20px",margin:"auto",size:"18px",paddingRight:"20px"}}/> */}
             </div>
                 
                  <Table rows={Search(people)} nextPage={nextPg} prevPage={previousPg}/>  
