@@ -13,41 +13,25 @@
     background-size:800px;
 }
 
-@media only screen and (max-width: 411px){
-    .displayTable{
-    background-image: url('../images/starwarsBackground.jpeg');
-    background-repeat: no-repeat;
-    background-position: left right;
-    background-size:200px;
-    text-align: right;
-    }
-    .table-header{
-        text-align: right;
-    }
+.charRowDetails {
+    color: var(--text-color);
+    font-weight: bold;
+
 }
+.table-header {
+    color: yellow ;
+}
+
 
 @media only screen and (max-width: 768px){
-    .displayTable{
-    background-image: url('../images/starwarsBackground.jpeg');
+    .displayTable{   
+    background-image: url('../images/background.jpeg');
     background-repeat: no-repeat;
-    background-position: right;
+    background-position: center;
     background-size:1000px;
-    text-align: right;
+    text-align: center;
     }
     .table-header{
-        text-align: right;
-    }
-}
-
-@media only screen and (max-width: 1024px){
-    .displayTable{
-    background-image: url('../images/starwarsBackground.jpeg');
-    background-repeat: no-repeat;
-    background-position: right;
-    background-size:1000px;
-    text-align: right;
-    }
-    .table-header{
-        text-align: right;
+        text-align: center;
     }
 }

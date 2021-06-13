@@ -4,7 +4,7 @@ import '../css/tableCSS.css';
 function TableHeader() {
     return (
         <thead>
-            <tr className="table-header" style={{ color: "yellow" }}>
+            <tr className="table-header">
                 <th><h3>CHARACTERS</h3></th>
             </tr>
         </thead>

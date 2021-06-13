@@ -8,7 +8,7 @@ function TableDataRow({ character }) {
   const [modalIsOpen,setmodalIsOpen] = useState(false)
 
     return (
-        <tr className="charRowDetails" style={{ color: `var(--text-color)` }}>
+        <tr className="charRowDetails" >
             <td style = {{cursor:'pointer'}} onClick={() => setmodalIsOpen(true)}>
                 <u>{character.name}</u></td>
 
@@ -17,8 +17,7 @@ function TableDataRow({ character }) {
                   <header className="m-Header">
                     <h2 className="modalHeader">{character.name}</h2>
                     <span> <button className="closeBtn" onClick={() => setmodalIsOpen(false)}>&times;</button> </span> 
-                  </header>
-                
+                  </header>                
                   <div className="m-Body">
                     <p className="modalBirth">Birth Year: {character.birth_year}</p>
                     <p className="modalGender">Gender: {character.gender}</p>

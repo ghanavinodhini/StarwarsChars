@@ -1,28 +1,36 @@
 
+.modal {
+    align-content: center;
+ 
+}
 .modal-dialog {
-    display: inline-flex;
-    background-color: antiquewhite;
-    border: 2px solid gray;
-    border-radius: 5px;
-    height:fit-content;
-    width: fit-content;
-    position: absolute;
+    height: 50vh;
+    width: 50vw;
     top: 50%;
     left: 50%;
+    padding: 10px 10px 10px 10px;
+    background-color: black;
+    border: 2px solid gray;
+    border-radius: 5px;
+    color:var(--text-color);
+    position: absolute;
     transform: translate(-50%, -50%); 
-    text-align: center;  
 }
 
 .modal-content{
-    align-content: center;
+    align-content:space-between;
+    text-align: center;
+    width: 100%;
+    padding: 10px 5px;
+    
 }
 
 .m-Header{
-    background-color: aqua;
-    display: block;
+    width: 100%;
+    border-bottom: 1px solid gray;
+    font-size: 18px;
     text-align: center;
-    padding:0px;
-    width:fit-content
+    
 }
 
 .closeBtn{
@@ -30,9 +38,9 @@
     top: 1px;
     right: 1px;
 }
-
+/*
 .m-Body{
     padding:5px;
 }
 
-  
+  */
