@@ -15,7 +15,6 @@ function FetchPeople() {
 
     let nextButton;
     let previousButton;
-    //let newUrlVal;
 
     //Get api data
     useEffect(() => {
@@ -71,25 +70,6 @@ function FetchPeople() {
     }
 
     if (nextPg !== null){
-
-        const getNewUrl = () => 
-        {
-        /* newUrlVal = nextPg;
-        console.log("Inside if condition nextPg value:"+newUrlVal);
-        let stringUrl = newUrlVal.length;
-        console.log("url length:"+stringUrl);
-        let substring1 = newUrlVal.substr(0,5);
-        let substring2 = newUrlVal.substr(6,stringUrl-1);
-        console.log("substring1 value: "+ substring1);
-        console.log("substring2 value: "+ substring2);
-        var newNextUrlVal = newUrlVal.replace(newUrlVal.substr(0,5),"https:");
-        console.log("new value url:"+ newNextUrlVal);
-        setNextPg(newNextUrlVal);
-        console.log("NextPg value after replace:"+nextPg);*/
-
-        
-        }
-        getNewUrl();
         nextButton = <button className="nextBtn" onClick={ handleNextClick } data-tooltip = "Next Page" style={ {backgroundColor:"white", width:"50px", height:"30px",align:"center",cursor:"pointer",marginLeft:"200px"}}> <FcNext /> </button>
     }
 
