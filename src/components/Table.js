@@ -9,8 +9,8 @@ import '../css/tableCSS.css';
  function Table({ rows, nextPage, prevPage }) {
     
      console.log("rows value in Table:"+rows);
-     console.log("Next value in Table:"+nextPage);
-     console.log("Prev value in Table:"+prevPage);
+     console.log("Next value in Table:"+nextPage.replace("http","https"));
+     console.log("Prev value in Table:"+prevPage.replace("http","https"));
      
         
     return (

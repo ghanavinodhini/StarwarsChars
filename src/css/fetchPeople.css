@@ -32,7 +32,7 @@
   .prevBtn::before{
     content:attr(data-tooltip);
     padding: .5rem;
-    width:max-content;
+    width:fit-content;
     max-width:100%;
     background:white;
     border-radius: .3rem;
