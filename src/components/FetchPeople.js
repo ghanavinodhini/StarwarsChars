@@ -41,7 +41,7 @@ function FetchPeople() {
         if(nextPg!== ""){
             console.log("Inside return");
                 async function currentTableData() {
-                    let response = await fetch(nextPg);
+                    let response = await fetch(nextPg.replace("http","https"));
                     let data = await response.json();
                     console.log("Next data fetched in currentTableData:"+data.results);
                     setPeople(data.results);
@@ -58,7 +58,7 @@ function FetchPeople() {
         if(previousPg!== ""){
             console.log("Inside return");
                 async function currentTableData() {
-                    let response = await fetch(previousPg);
+                    let response = await fetch(previousPg.replace("http","https"));
                     let data = await response.json();
                     console.log("Next data fetched in currentTableData:"+data.results);
                     setPeople(data.results);
